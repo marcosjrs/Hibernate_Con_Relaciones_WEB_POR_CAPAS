@@ -7,7 +7,7 @@
     </head>
     <body>
         <a href="${pageContext.request.contextPath}/listado">
-            Cat&aacute;logo de Alumnos
+            Catálogo de Alumnos
         </a>
     </body>
 </html>
