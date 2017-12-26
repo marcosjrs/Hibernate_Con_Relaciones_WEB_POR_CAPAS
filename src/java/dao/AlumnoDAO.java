@@ -6,16 +6,14 @@ import model.Alumno;
 
 public class AlumnoDAO extends GenericDAO {
 
-    public void listar() {
+    public  List<Alumno> listar() {
         // Consulta a ejecutar
         // No necesitamos crear una nueva transaccion
         String hql = "SELECT a FROM Alumno a";
         em = getEntityManager();
         Query query = em.createQuery(hql);
         List<Alumno> list = query.getResultList();
-        for (Alumno a : list) {
-            System.out.println(a);
-        }
+        return list;
     }
 
     public void insertar(Alumno alumno) {
@@ -75,7 +73,7 @@ public class AlumnoDAO extends GenericDAO {
         }
     }
 
-    public Object buscarPorId(Alumno alumno) {
+    public Alumno buscarPorId(Alumno alumno) {
         em = getEntityManager();
         return em.find(Alumno.class, alumno.getIdAlumno());
     }
