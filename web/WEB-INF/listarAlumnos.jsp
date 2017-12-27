@@ -9,6 +9,7 @@
     <body>
         Listar Alumnos
         <br/>
+        <a href="${pageContext.request.contextPath}/formularioalta">Agregar alumno</a>
         <br/>
         <table border="1">
             <tr>
