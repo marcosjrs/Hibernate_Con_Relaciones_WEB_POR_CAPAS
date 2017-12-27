@@ -18,6 +18,12 @@ public class ServletAgregarController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException { 
+        this.doPost(request, response);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException { 
          //1. Recuperamos los parametros del formulario
         String nombre = request.getParameter("nombre");
         String apellidoPaterno = request.getParameter("apellidoPaterno");
@@ -57,11 +63,6 @@ public class ServletAgregarController extends HttpServlet {
         //4. Redireccionamos a la pagina de inicio
         //ya que de lo contrario tendriamos q volver a cargar la lista de alumnos
         request.getRequestDispatcher("/index.jsp").forward(request, response);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException { 
     }
 
 }
