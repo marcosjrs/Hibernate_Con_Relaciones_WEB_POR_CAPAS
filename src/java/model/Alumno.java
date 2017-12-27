@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -61,11 +62,11 @@ public class Alumno implements Serializable {
     private List<Asignacion> asignacionList;
 
     @JoinColumn(name = "id_contacto", referencedColumnName = "id_contacto")
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Contacto contacto;
 
     @JoinColumn(name = "id_domicilio", referencedColumnName = "id_domicilio")
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Domicilio domicilio;
 
     @JoinColumn(name = "id_usuario", referencedColumnName = "id_usuario")

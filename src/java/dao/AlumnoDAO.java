@@ -28,10 +28,6 @@ public class AlumnoDAO extends GenericDAO {
         } catch (Exception ex) {
             System.out.println("Error al insetar objeto:" + ex.getMessage());
             // ex.printStackTrace();
-        } finally {
-            if (em != null) {
-                em.close();
-            }
         }
     }
 
