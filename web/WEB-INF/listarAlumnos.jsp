@@ -23,7 +23,9 @@
             </tr>
             <c:forEach var="alumno" items="${alumnos}">
                 <tr>
-                    <td>${alumno.idAlumno}</td>
+                    <td><a href="${pageContext.request.contextPath}/modificar?idAlumno=${alumno.idAlumno}">
+                            ${alumno.idAlumno}
+                        </a></td>
                     <td>${alumno.nombre}</td>
                     <td>${alumno.apellidoPaterno }</td>
                     <td>${alumno.apellidoMaterno }</td>
